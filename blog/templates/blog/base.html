@@ -14,7 +14,10 @@
                 {% include './icons/file-earmark-plus.svg' %}
             </a>
                 <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-                <a class="top-menu">Hello {{ user.username }} <form method="post" action="{% url 'logout' %}">{% csrf_token %} <small><button type="submit">logout</button></small></form></a>
+                <a class="top-menu">Hello {{ user.username }} <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %} 
+                    <small><button type="submit">logout</button></small>
+                </form></a>
 
             {% else %}
                 <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
